@@ -1,0 +1,52 @@
+<html>
+
+<head>
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<h2>User Form</h2>
+
+		<font color="green">
+			<p th:text="${msg}"></p>
+		</font>
+
+		<form th:object="${user}" th:action="@{/formLoad}" method="post">
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{name}" /></td>
+					<td>
+						<p th:if="${#fields.hasErrors('name')}" th:errorclass="error" th:errors="*{name}"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" th:field="*{email}" /></td>
+					<td>
+						<p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td><input type="text" th:field="*{phoneNumber}"/> </td>
+					<td>
+						<p th:if="${#fields.hasErrors('phoneNumber')}" th:errorclass="error" th:errors="*{phoneNumber}"></p>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>

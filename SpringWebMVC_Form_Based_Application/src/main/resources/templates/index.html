@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<title> Spring Web MVC Form </title>
+</head>
+
+<body>
+
+	<form th:object="${userObj}" th:action="@{/user}" method="post">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" th:field="*{name}" /></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" th:field="*{email}" /></td>
+			</tr>
+			<tr>
+				<td>Phone Number</td>
+				<td><input type="text" th:field="*{phoneNo}"/> </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="submit" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
